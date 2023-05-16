@@ -55,8 +55,10 @@ return [
     'url' => env('APP_URL', 'http://localhost'),
 
     'asset_url' => env('ASSET_URL', null),
-
+    
     'client_url' => env('CLIENT_URL', 'http://localhost:3000'),
+    
+    'googleapi' => env('GOOGLEAPIKEY', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -173,7 +175,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        GoogleMaps\ServiceProvider\GoogleMapsServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -235,6 +237,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'GoogleMaps' => GoogleMaps\Facade\GoogleMapsFacade::class,
     ],
 
 ];
